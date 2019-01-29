@@ -612,7 +612,7 @@ Matrix Matrix::solve(const Matrix b)
                     pivot = element;                               // set new pivot value
 					foundSwap = true;
 
-                    cout << "Swapped Rows: " << a << " and " << i << endl << "==============" << endl << matrix << endl << "==============" << endl;
+                    // cout << "Swapped Rows: " << a << " and " << i << endl << "==============" << endl << matrix << endl << "==============" << endl;
 				}
 			}
 
@@ -639,7 +639,7 @@ Matrix Matrix::solve(const Matrix b)
 		augment.scalarMultiplyRow(i, ~pivot);
         pivot = *matrix(i, j);
 
-		cout << "Divide by Pivot:" <<  endl << "==============" << endl << matrix << endl << "==============" << endl;
+		// cout << "Divide by Pivot:" <<  endl << "==============" << endl << matrix << endl << "==============" << endl;
 
         // take out the elements BELOW the pivot
 
@@ -660,9 +660,9 @@ Matrix Matrix::solve(const Matrix b)
 						factor = factor * Fraction(-1);
 					}
                     
-					cout << "Factor: " << factor << endl;
-                    cout << "Pivot: " << pivot << endl;
-                    cout << "i: " << i << " j: " << j << endl;
+					// cout << "Factor: " << factor << endl;
+                    // cout << "Pivot: " << pivot << endl;
+                    // cout << "i: " << i << " j: " << j << endl;
 
 					// Eliminate
 
@@ -675,7 +675,7 @@ Matrix Matrix::solve(const Matrix b)
 					matrix.scalarMultiplyRow(i, ~factor);       // return pivot row to its original state
 					augment.scalarMultiplyRow(i, ~factor);        // and apply to identity matrix
 
-					cout << "Eliminate Below (-):" << endl << "==============" << endl << matrix << endl << "==============" << endl;
+					// cout << "Eliminate Below (-):" << endl << "==============" << endl << matrix << endl << "==============" << endl;
 				}
 				else	// if signs are different then ADD rows
 				{
@@ -686,9 +686,9 @@ Matrix Matrix::solve(const Matrix b)
 						factor = factor * Fraction(-1);
 					}
                     
-					cout << "Factor: " << factor << endl;
-                    cout << "Pivot: " << pivot << endl;
-                    cout << "i: " << i << " j: " << j << endl;
+					// cout << "Factor: " << factor << endl;
+                    // cout << "Pivot: " << pivot << endl;
+                    // cout << "i: " << i << " j: " << j << endl;
 
 					// Eliminate
 
@@ -701,7 +701,7 @@ Matrix Matrix::solve(const Matrix b)
 					matrix.scalarMultiplyRow(i, ~factor);       // return pivot row to its original state
 					augment.scalarMultiplyRow(i, ~factor);        // and apply to identity matrix
 
-					cout << "Eliminate Below (+):" << endl << "==============" << endl << matrix << endl << "==============" << endl;
+					// cout << "Eliminate Below (+):" << endl << "==============" << endl << matrix << endl << "==============" << endl;
 				}
 			}
 
@@ -726,9 +726,9 @@ Matrix Matrix::solve(const Matrix b)
 						factor = factor * Fraction(-1);
 					}
                     
-					cout << "Factor: " << factor << endl;
-                    cout << "Pivot: " << pivot << endl;
-                    cout << "i: " << i << " j: " << j << endl;
+					// cout << "Factor: " << factor << endl;
+                    // cout << "Pivot: " << pivot << endl;
+                    // cout << "i: " << i << " j: " << j << endl;
 
 					// Eliminate
 
@@ -741,7 +741,7 @@ Matrix Matrix::solve(const Matrix b)
 					matrix.scalarMultiplyRow(i, ~factor);       // return pivot row to its original state
 					augment.scalarMultiplyRow(i, ~factor);        // and apply to identity matrix
 
-					cout << "Eliminate Above (-):" << endl << "==============" << endl << matrix << endl << "==============" << endl;
+					// cout << "Eliminate Above (-):" << endl << "==============" << endl << matrix << endl << "==============" << endl;
 				}
 				else	// if signs are different then ADD rows
 				{
@@ -752,9 +752,9 @@ Matrix Matrix::solve(const Matrix b)
 						factor = factor * Fraction(-1);
 					}
                     
-					cout << "Factor: " << factor << endl;
-                    cout << "Pivot: " << pivot << endl;
-                    cout << "i: " << i << " j: " << j << endl;
+					// cout << "Factor: " << factor << endl;
+                    // cout << "Pivot: " << pivot << endl;
+                    // cout << "i: " << i << " j: " << j << endl;
 
 					// Eliminate
 
@@ -767,7 +767,7 @@ Matrix Matrix::solve(const Matrix b)
 					matrix.scalarMultiplyRow(i, ~factor);       // return pivot row to its original state
 					augment.scalarMultiplyRow(i, ~factor);        // and apply to identity matrix
 
-					cout << "Eliminate Above (+):" << endl << "==============" << endl << matrix << endl << "==============" << endl;
+					// cout << "Eliminate Above (+):" << endl << "==============" << endl << matrix << endl << "==============" << endl;
 				}
 			}
 
@@ -1023,7 +1023,7 @@ Matrix Matrix::operator ~() const
                     pivot = element;                               // set new pivot value
 					foundSwap = true;
 
-                    cout << "Swapped Rows: " <<  endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
+                    // cout << "Swapped Rows: " <<  endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
 				}
 			}
 
@@ -1041,7 +1041,7 @@ Matrix Matrix::operator ~() const
 		inverseMatrix.scalarMultiplyRow(k, ~pivot);
         pivot = *originalMatrix(k, k);
 
-		cout << "Divide by Pivot:" <<  endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
+		// cout << "Divide by Pivot:" <<  endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
 
         // take out the elements BELOW the pivot
 
@@ -1062,7 +1062,7 @@ Matrix Matrix::operator ~() const
 						factor = factor * Fraction(-1);
 					}
                     
-					cout << "Factor: " << factor << endl << "Pivot: " << pivot << endl;
+					// cout << "Factor: " << factor << endl << "Pivot: " << pivot << endl;
 
 					// Eliminate
 
@@ -1075,7 +1075,7 @@ Matrix Matrix::operator ~() const
 					originalMatrix.scalarMultiplyRow(k, ~factor);       // return pivot row to its original state
 					inverseMatrix.scalarMultiplyRow(k, ~factor);        // and apply to identity matrix
 
-					cout << "Eliminate Below (-):" << endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
+					// cout << "Eliminate Below (-):" << endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
 				}
 				else	// if signs are different then ADD rows
 				{
@@ -1086,7 +1086,7 @@ Matrix Matrix::operator ~() const
 						factor = factor * Fraction(-1);
 					}
                     
-					cout << "Factor: " << factor << endl << "Pivot: " << pivot << endl;
+					// cout << "Factor: " << factor << endl << "Pivot: " << pivot << endl;
 
 					// Eliminate
 
@@ -1099,7 +1099,7 @@ Matrix Matrix::operator ~() const
 					originalMatrix.scalarMultiplyRow(k, ~factor);       // return pivot row to its original state
 					inverseMatrix.scalarMultiplyRow(k, ~factor);        // and apply to identity matrix
 
-					cout << "Eliminate Below (+):" << endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
+					// cout << "Eliminate Below (+):" << endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
 				}
 			}
 
@@ -1124,7 +1124,7 @@ Matrix Matrix::operator ~() const
 						factor = factor * Fraction(-1);
 					}
                     
-					cout << "Factor: " << factor << endl << "Pivot: " << pivot << endl;
+					// cout << "Factor: " << factor << endl << "Pivot: " << pivot << endl;
 
 					// Eliminate
 
@@ -1137,7 +1137,7 @@ Matrix Matrix::operator ~() const
 					originalMatrix.scalarMultiplyRow(k, ~factor);       // return pivot row to its original state
 					inverseMatrix.scalarMultiplyRow(k, ~factor);        // and apply to identity matrix
 
-					cout << "Eliminate Above (-):" << endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
+					// cout << "Eliminate Above (-):" << endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
 				}
 				else	// if signs are different then ADD rows
 				{
@@ -1148,7 +1148,7 @@ Matrix Matrix::operator ~() const
 						factor = factor * Fraction(-1);
 					}
                     
-					cout << "Factor: " << factor << endl << "Pivot: " << pivot << endl;
+					// cout << "Factor: " << factor << endl << "Pivot: " << pivot << endl;
 
 					// Eliminate
 
@@ -1161,7 +1161,7 @@ Matrix Matrix::operator ~() const
 					originalMatrix.scalarMultiplyRow(k, ~factor);       // return pivot row to its original state
 					inverseMatrix.scalarMultiplyRow(k, ~factor);        // and apply to identity matrix
 
-					cout << "Eliminate Above (+):" << endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
+					// cout << "Eliminate Above (+):" << endl << "==============" << endl << originalMatrix << endl << "==============" << endl;
 				}
 			}
 
